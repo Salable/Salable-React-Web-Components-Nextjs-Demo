@@ -6,7 +6,7 @@ defineCustomElements();
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="flex min-h-screen flex-col gap-8 p-24">
             <h1>Salable React Components Demo</h1>
             <SalablePricingTable
                 apiKey="s1tVhRx3WH2jUm2cWTl8g6dbNj7GJ8Zg21XuzEds"
