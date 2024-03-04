@@ -1,6 +1,6 @@
 'use client';
 
-import {defineCustomElements, SalableCheckout, SalablePricingTable} from "@salable/react-library";
+import {defineCustomElements, SalableCheckout, SalablePricingTable} from "@salable/react-web-components";
 
 defineCustomElements();
 
