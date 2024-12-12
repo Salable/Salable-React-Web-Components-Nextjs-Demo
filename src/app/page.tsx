@@ -1,31 +1,47 @@
-'use client';
+"use client";
 
-import {defineCustomElements, SalableCheckout, SalablePricingTable} from "@salable/react-web-components";
+import {
+  defineCustomElements,
+  SalableCheckout,
+  SalableInvoices,
+  SalablePricingTable,
+} from "@salable/react-web-components";
 
 defineCustomElements();
 
 export default function Home() {
-    return (
-        <main className="flex min-h-screen flex-col gap-8 p-24">
-            <h1>Salable React Components Demo</h1>
-            <h2>Pricing Table</h2>
-            <SalablePricingTable
-                apiKey="test_19fda9530350e27eb3948749d511c9d51d09e7c5"
-                uuid="44363fe3-2607-437a-8b66-5375d7a762a2"
-                globalSuccessUrl="https://google.co.uk"
-                globalCancelUrl="https://google.co.uk"
-                globalGranteeId="123"
-                member="456"
-                isCustomPricingTable={false}
-            />
-            <h2>Checkout</h2>
-            <SalableCheckout
-                apiKey="test_19fda9530350e27eb3948749d511c9d51d09e7c5"
-                planUuid="390fe44d-33d9-48fc-9863-eb641e148249"
-                member='example-member-123'
-                granteeId='example-grantee-123'
-                successUrl="https://www.google.com"
-            />
-        </main>
-    );
+  return (
+    <main className="flex min-h-screen flex-col gap-8 p-24">
+      <h1>Salable Web Components Next.js Demo</h1>
+
+      <h2>Pricing Table</h2>
+      <SalablePricingTable
+        sessionToken="YOUR_SESSION_TOKEN"
+        uuid="YOUR_PRICING_TABLE_UUID"
+        globalSuccessUrl="https://example.com/success"
+        globalCancelUrl="https://example.com/cancel"
+        globalGranteeId="EXAMPLE_GRANTEE_ID"
+        member="EXAMPLE_MEMBER"
+        isCustomPricingTable={false}
+        currency="GBP"
+      />
+
+      <h2>Checkout</h2>
+      <SalableCheckout
+        sessionToken="YOUR_SESSION_TOKEN"
+        planUuid="YOUR_PLAN_UUID"
+        successUrl="https://example.com/success"
+        granteeId="EXAMPLE_GRANTEE_ID"
+        member="EXAMPLE_MEMBER"
+        currency="GBP"
+      />
+
+      <h2>Invoices</h2>
+      <SalableInvoices
+        sessionToken="YOUR_SESSION_TOKEN"
+        subscriptionUuid="YOUR_SUBSCRIPTION_UUID"
+        limit={3}
+      />
+    </main>
+  );
 }
