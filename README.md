@@ -1,4 +1,6 @@
-# Salable Web Components : Next.js Demo
+# Salable Web Components : Next.js App Router Demo
+
+> Looking for how to setup Salable Web Components in a Next.js Pages Router project? [See our Pages Router example.](https://github.com/Salable/Salable-React-Web-Components-Nextjs-Demo/tree/pages-router)
 
 [Salable](https://www.salable.app) is a subscription licensing platform that allows users to have more control over their customers and how they interact with their applications/products.
 
