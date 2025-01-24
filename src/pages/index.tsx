@@ -1,15 +1,37 @@
-"use client";
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
 
-import {
-  defineCustomElements,
-  SalableCheckout,
-  SalableInvoices,
-  SalablePricingTable,
-} from "@salable/react-web-components";
+const SalablePricingTable = dynamic(
+  () =>
+    import("@salable/react-web-components").then(
+      (module) => module.SalablePricingTable,
+    ),
+  { ssr: false },
+);
+const SalableCheckout = dynamic(
+  () =>
+    import("@salable/react-web-components").then(
+      (module) => module.SalableCheckout,
+    ),
+  { ssr: false },
+);
 
-defineCustomElements();
+const SalableInvoices = dynamic(
+  () =>
+    import("@salable/react-web-components").then(
+      (module) => module.SalableInvoices,
+    ),
+  { ssr: false },
+);
 
 export default function Home() {
+  useEffect(() => {
+    import("@salable/react-web-components").then((module) => {
+      const { defineCustomElements } = module;
+      defineCustomElements();
+    });
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col gap-8 p-24">
       <h1>Salable Web Components Next.js Demo</h1>
